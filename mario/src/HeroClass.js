@@ -41,6 +41,6 @@ Hero.prototype.jump = function(keyEvent){
   var currentY = this.getPosition().y;
   
   this.$node
-      .animate({'bottom': currentX + 200}, 200)
-      .animate({'bottom': currentX}, 200);
+      .animate({'bottom': currentX + 96}, 200, function() {})
+      .animate({'bottom': currentX}, 96);
 }

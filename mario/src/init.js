@@ -23,6 +23,11 @@ $(document).ready(function(){
     $("#stage").prepend(player2.$node);
   }
 
+  $('.player1').on('click', function() {
+    var player1 = new Hero(128, Math.random() * 500, 'mario');
+    $("#stage").prepend(player1.$node); 
+  });
+
   window.enemy = new Enemy(128, 500, 'ghoomba');
   $("#stage").prepend(enemy.$node);
   
@@ -129,7 +134,7 @@ $(document).ready(function(){
     var thing = new Layout(x, y, classNames);
     $('#stage').prepend(thing.$node);  
   }
-
+  // Setting up stage
   addStatic(128, Math.random()*300 + 200, 'hill large');
   addStatic(128, Math.random()*200 + 100, 'hill small');
   addStatic(128, wWidth - 200, 'castle small');
@@ -149,10 +154,9 @@ $(document).ready(function(){
     for(var i=0;i<gameElements.length;i++){
       console.log(player1.timer);
       clearTimeout(gameElements[i].timer);
-      gameElements[i].setPosition(128, i*spacing);
+      gameElements[i].$node.animate({bottom: 128, left: i*spacing});
     }
   });
-  console.log(gameElements);
 
   $(".startGame").on("click", function(event){
     //var characterFunctionName = $(this).data("hero-name");

@@ -11,7 +11,7 @@ var Enemy = function(x, y, name){
   //var wWidth = $(window).width();
   //var wHeight = $(window).height();
   // debugger;
-  this.direction = 'left';
+  this.direction = 'right';
   this.setPosition(x, y);
   this.step();
 }
